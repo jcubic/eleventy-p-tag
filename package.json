@@ -1,0 +1,23 @@
+{
+  "name": "eleventy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "@11ty/eleventy"
+  },
+  "keywords": [],
+  "author": "Jakub T. Jankiewicz <jcubic@onet.pl> (https://jcubic.pl/me/)",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "eleventy-plugin-embed-everything": "^1.21.0",
+    "front-matter": "^4.0.2",
+    "html-entities": "^2.6.0",
+    "html-minifier-terser": "^7.2.0",
+    "markdown-it-abbr": "^2.0.0",
+    "puppeteer": "^24.6.1"
+  }
+}
