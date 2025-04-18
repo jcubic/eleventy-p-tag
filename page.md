@@ -1,12 +1,13 @@
 ---
 layout: layout.liquid
+title: This is title
+description: This is description
 permalink: "/index.html"
+tags: pages_en
 ---
 
 {% assign posts = collections.my_collection | reverse %}
 
 {% for post in posts %}
-* [{{post.date | date: "%Y-%m-%d" }}]: {% if post.data.url %}[{{ post.data.title }}]({{ post.data.url }}){% else %}{{ post.data.title }}{% endif %} {{ post.content }}
+* [{{ post.data.title }}]({{ post.data.url }}) {{ post.content }}
 {% endfor %}
-
-{% include "_abbr" %}

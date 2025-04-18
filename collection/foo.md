@@ -6,4 +6,3 @@ tags: my_collection
 ---
 
 This is official **Eleventy** Website
-

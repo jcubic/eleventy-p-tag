@@ -10,15 +10,33 @@ npx @11ty/eleventy --serve
 
 ## Issue
 
-when adding:
+This structure:
 
 ```liquid
-{% include "_abbr" %}
+{% for post in posts %}
+* [{{ post.data.title }}]({{ post.data.url }}) {{ post.content }}
+{% endfor %}
 ```
 
-At the end of the page.md
+Generates this HTML when there are more than one item in collection:
 
-The rendered HTML have:
-* `<li>` tag with `<p>` inside
-* empty `<p></p>` tag at the end of `<li>`
-* an extra `<li></li>` tag
+```html
+<li>
+  <p>
+     <a href="https://www.11ty.dev/">Eleventy is Cool</a>
+     <p>This is official <strong>Eleventy</strong> Website</p>
+  </p>
+</li>
+```
+
+`<p>` inside `<p>` tag, and when you add `IdAttributePlugin` you end up with:
+
+```html
+<li>
+  <p><a href="https://www.11ty.dev/">Eleventy is Cool</a> </p>
+  <p>This is official <strong>Eleventy</strong> Website</p>
+  <p></p>
+</li>
+```
+
+empty `<p></p>` at the end.
